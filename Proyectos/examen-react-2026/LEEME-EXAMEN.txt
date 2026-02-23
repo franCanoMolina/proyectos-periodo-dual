@@ -1,0 +1,133 @@
+============================================================
+  INSTRUCCIONES DE CONFIGURACION — EXAMEN REACT 2026
+  Lee esto ANTES de empezar el examen
+============================================================
+
+
+NOMBRE DE TU CARPETA DE TRABAJO
+-------------------------------------------------
+Renombra la carpeta del examen con el siguiente formato:
+
+    examen-tunombre-inicialesapellidos
+
+Ejemplos:
+    examen-juan-gp
+    examen-maria-lf
+    examen-carlos-rm
+
+Esta carpeta es la que entregaras comprimida en ZIP al final.
+
+
+============================================================
+PASO 1: Importar el perfil de Visual Studio Code
+============================================================
+
+1. Abre Visual Studio Code
+2. Abajo a la izquierda, haz clic en el icono de engranaje
+3. Selecciona "Profiles" > "Import Profile..."
+4. Selecciona el fichero "examen.code-profile" incluido en esta carpeta
+5. Haz clic en "Create Profile"
+6. VS Code cambiara al perfil del examen automaticamente
+
+IMPORTANTE: Este perfil SOLO tiene las extensiones permitidas.
+Tus extensiones personales NO se borran, simplemente no estaran
+activas durante el examen. Al terminar, vuelves a tu perfil normal.
+
+
+============================================================
+PASO 2: Instalar dependencias del proyecto
+============================================================
+
+Abre una terminal en VS Code (Ctrl + ñ) y ejecuta:
+
+    npm install
+
+Esto instalara los siguientes paquetes necesarios:
+
+  Dependencias de produccion:
+    - react 18           (libreria principal)
+    - react-dom 18       (renderizado en el navegador)
+    - react-router-dom 6 (navegacion entre paginas)
+
+  Dependencias de desarrollo:
+    - vite               (servidor de desarrollo y bundler)
+    - typescript          (tipado estatico)
+    - tailwindcss 4       (clases de utilidad CSS)
+    - @vitejs/plugin-react
+    - @tailwindcss/vite
+    - @types/react
+    - @types/react-dom
+
+NO necesitas instalar nada mas. Todo lo necesario ya esta
+en el package.json.
+
+
+============================================================
+PASO 3: Arrancar el proyecto
+============================================================
+
+Ejecuta en la terminal:
+
+    npm run dev
+
+Abre el navegador en la URL que aparezca:
+
+    http://localhost:5173
+
+
+============================================================
+PASO 4: Backend del examen
+============================================================
+
+El backend esta desplegado en:
+
+    http://192.168.50.120:1495
+
+Puedes ver la pagina de informacion del backend abriendo
+esa URL directamente en el navegador.
+
+La API esta en:
+
+    http://192.168.50.120:1495/api
+
+Puedes probar que funciona:
+  - Abriendo el navegador en: http://192.168.50.120:1495/api/incidents
+  - O usando el fichero api.http con REST Client en VS Code
+  - O usando Thunder Client en VS Code
+
+
+============================================================
+PASO 5: Empezar el examen
+============================================================
+
+1. Lee el enunciado completo antes de empezar a programar
+2. Los tipos ya estan definidos en src/types/index.ts
+3. Las clases CSS ya estan en src/index.css
+4. Empieza por el Apartado 1 (servicios API) y sigue en orden
+5. Consulta el fichero api.http para entender las peticiones
+6. Puedes consultar el repositorio del curso como referencia
+
+
+============================================================
+ENTREGA DEL EXAMEN
+============================================================
+
+Al terminar:
+
+1. Para la ejecucion (Ctrl + C en la terminal)
+2. NO incluyas la carpeta node_modules en la entrega
+3. Comprime tu carpeta en ZIP:
+       examen-tunombre-inicialesapellidos.zip
+4. Sube el ZIP a Moodle antes de que termine el tiempo
+
+
+============================================================
+AL TERMINAR: RECUPERAR TU VS CODE NORMAL
+============================================================
+
+1. Clic en el icono de engranaje (abajo a la izquierda)
+2. Selecciona "Profiles" > "Default" (o tu perfil anterior)
+3. Si quieres, elimina el perfil del examen:
+   Profiles > Delete Profile... > "Examen-React"
+
+============================================================

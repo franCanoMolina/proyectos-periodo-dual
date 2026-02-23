@@ -1,0 +1,64 @@
+### ============================================================
+### API de IncidTech — Fichero de pruebas
+### Usa REST Client (Ctrl+Shift+P > "Rest Client: Send Request")
+### o Thunder Client para probar estos endpoints
+### ============================================================
+
+@baseUrl = http://192.168.50.120:1495/api
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhbHVtbm9AdGVzdC5jb20iLCJpYXQiOjE3NzExOTgzOTMsImV4cCI6MTc3MTI4NDc5M30.EUWhhWiD8jj3rd3b_jXTKj4IHIx7oM3OL0qMXa4c4TM
+
+### ============================================================
+### AUTH
+### ============================================================
+
+### Login con usuario alumno
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "alumno@test.com",
+  "password": "123456"
+}
+
+### Login con usuario profesor
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "profesor@test.com",
+  "password": "123456"
+}
+
+### Obtener usuario actual (requiere token)
+GET {{baseUrl}}/auth/me
+Authorization: Bearer {{token}}
+
+### ============================================================
+### INCIDENCIAS
+### ============================================================
+
+### Listar todas las incidencias (NO requiere auth)
+GET {{baseUrl}}/incidents
+
+### Crear una nueva incidencia (requiere token)
+POST {{baseUrl}}/incidents
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Error en impresora planta 2",
+  "description": "La impresora HP del aula 204 no imprime a doble cara",
+  "priority": "media"
+}
+
+### Eliminar una incidencia por ID (requiere token)
+### Cambia el 1 por el ID de la incidencia que quieras eliminar
+DELETE {{baseUrl}}/incidents/50
+Authorization: Bearer {{token}}
+
+### ============================================================
+### HEALTH CHECK
+### ============================================================
+
+### Comprobar que el backend está funcionando
+GET {{baseUrl}}/health
