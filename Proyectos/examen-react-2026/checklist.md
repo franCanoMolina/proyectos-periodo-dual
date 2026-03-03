@@ -6,12 +6,12 @@
 
 ---
 
-### - [] **📁 FASE 2: Estructura del Proyecto**
+### - [X] **📁 FASE 2: Estructura del Proyecto**
 > *Incluye: Creación de carpetas (components, context, pages, services) y organización de los tipos.*
 
 ---
 
-### - [ ] **🛠️ FASE 3: Lógica y Capa de Datos**
+### - [X] **🛠️ FASE 3: Lógica y Capa de Datos**
 > *Incluye: Implementación de servicios API (CRUD) y configuración de contextos globales (Auth y Incidencias).*
 
 ---
