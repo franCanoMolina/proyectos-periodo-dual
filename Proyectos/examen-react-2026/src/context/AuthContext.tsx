@@ -27,7 +27,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
             if (storedToken) {
                 try {
-                    // Llamar a getMe(token) para recuperar los datos del usuario
+                    // pedimos el token para recuperar los datos del usuario
                     const userData = await getMe(storedToken);
                     setUser(userData);
                     setToken(storedToken);
@@ -49,7 +49,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setError(null);
         try {
             const data = await loginApi({ email, password });
-
+            
             if (!data.data || !data.data.token || !data.data.user) {
                 throw new Error("El servidor no ha devuelto un token o usuario válido");
             }
@@ -59,7 +59,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             setToken(data.data.token);
 
             // obtener los datos del usuario
-            if (data.data?.user) {
+            if (data.data.user) {
                 setUser(data.data.user);
             } else {
                 const userData = await getMe(data.data.token);
@@ -78,7 +78,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(null);
         setError(null);
     };
-
+                                    
     return (
         <AuthContext.Provider value={{ user, token, loading, error, login, logout }}>
             {children}

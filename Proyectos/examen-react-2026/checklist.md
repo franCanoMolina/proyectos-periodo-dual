@@ -16,7 +16,7 @@
 
 ---
 
-### - [ ] **🖥️ FASE 4: Interfaz de Usuario (UI)**
+### - [X] **🖥️ FASE 4: Interfaz de Usuario (UI)**
 > *Incluye: Desarrollo de componentes dinámicos (IncidentCard, Form) y páginas principales.*
 
 ---

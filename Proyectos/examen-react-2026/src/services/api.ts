@@ -7,7 +7,7 @@ const API_URL = "http://192.168.50.120:1495/api";
 export async function login(credentials: LoginDTO): Promise<AuthResponse> {
     // Realizamos la petición al endpoint de login
     const response = await fetch(`${API_URL}/auth/login`, {
-        method: "POST", // Usamos POST porque estamos enviando datos sensibles
+        method: "POST", // Usamos POST porque estamos enviando datos 
         headers: {
             "Content-Type": "application/json", 
         },
@@ -21,7 +21,7 @@ export async function login(credentials: LoginDTO): Promise<AuthResponse> {
         throw new Error("El login ha fallado");
     }
 
-    // Si todo fue bien, convertimos la respuesta JSON del servidor a un objeto de JavaScript y la devolvemos
+    // convertimos la respuesta del servidor a un objeto de JavaScript y la devolvemos
     return response.json();
 }
 
@@ -77,7 +77,7 @@ export async function createIncident(token: string, incident: CreateIncidentDTO)
 export async function deleteIncident(token: string, id: number): Promise<MessageResponse> {
     // Realizamos la petición al endpoint de incidencias
     const response = await fetch(`${API_URL}/incidents/${id}`, {
-    method: "DELETE", // usamos delete para borrar datos 
+    method: "DELETE", // delete para borrar datos 
     headers: {
       Authorization: `Bearer ${token}`,
     },

@@ -42,7 +42,7 @@ export function IncidentsProvider({ children }: { children: ReactNode }) {
             // Volvemos a pedir la lista actualizada al backend
             await fetchIncidents();
         } catch (error) {
-            console.error("Error al crear la incidencia:", error);
+            console.error("Error al crear la incidencia:");
             throw error;
         }
     };
@@ -54,7 +54,7 @@ export function IncidentsProvider({ children }: { children: ReactNode }) {
             // Volvemos a pedir la lista actualizada al backend
             await fetchIncidents();
         } catch (error) {
-            console.error("Error al borrar la incidencia:", error);
+            console.error("Error al borrar la incidencia:");
             throw error;
         }
     };
